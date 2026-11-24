@@ -4,7 +4,9 @@ import solid from '@solidjs/vite-plugin';
 
 export default defineConfig({
   plugins: [
-    solid({ start: { nodeServer: true }, ssr: true, extensions: ['.jsx', '.tsx'], diagnostics: true }),
+    // The site is hosted as static files on Vercel. Keep SSR disabled so the
+    // Vite build writes its entry HTML directly to dist/ for Vercel to serve.
+    solid({ start: true, ssr: false, extensions: ['.jsx', '.tsx'], diagnostics: true }),
     fileRoutes({ types: true }),
   ],
   server: {
@@ -19,5 +21,6 @@ export default defineConfig({
   build: {
     target: 'esnext',
     assetsInlineLimit: 0,
+    outDir: 'dist',
   },
 });
