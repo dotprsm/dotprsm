@@ -1,0 +1,419 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #d3d3d3;
+  background: #0e0e11;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --background: #0e0e11;
+  --text: #d3d3d3;
+  --muted: #9c9c9f;
+  --subtle: #77777c;
+  --line: #3b3b40;
+  --accent: #74c7ec;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--background);
+}
+
+a {
+  color: inherit;
+  text-decoration-color: rgb(211 211 211 / 40%);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+
+a:focus-visible,
+input:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 3px;
+}
+
+svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.site-shell {
+  width: min(100%, 768px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 36px;
+}
+
+.site-header {
+  display: flex;
+  min-height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.site-brand {
+  flex: 0 0 auto;
+  font-size: 15px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #bcbcc0;
+  font-size: 14px;
+}
+
+.site-nav > span {
+  color: var(--subtle);
+}
+
+.site-nav > a {
+  text-decoration: none;
+}
+
+.page-content {
+  min-height: calc(100vh - 60px);
+  padding: 64px 0 70px;
+}
+
+.page-content h1,
+.list-heading h2 {
+  margin: 0;
+  color: #f0f0f1;
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.intro p,
+.page-intro p,
+.not-found-page > p:not(.page-kicker) {
+  margin: 19px 0 0;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.connect-section {
+  margin-top: 40px;
+}
+
+.connect-section h2 {
+  margin: 0;
+  color: #f0f0f1;
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.connect-section p {
+  margin: 19px 0 0;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 12px;
+  margin-top: 27px;
+  color: #c1c1c5;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.contact-links > span {
+  color: var(--muted);
+}
+
+.listing-section {
+  margin-top: 58px;
+}
+
+.list-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.list-heading > a {
+  color: #c1c1c5;
+  font-size: 15px;
+}
+
+.entry-list {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.entry-card {
+  display: flex;
+  min-height: 78px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 13px 17px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+}
+
+a.entry-card {
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+a.entry-card:hover {
+  border-color: #67676d;
+  color: var(--text);
+}
+
+.entry-copy {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.entry-copy strong {
+  color: inherit;
+  font-size: 16px;
+  font-weight: 620;
+  line-height: 1.4;
+}
+
+.entry-copy small {
+  color: #b0b0b4;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.entry-card > svg {
+  flex: 0 0 auto;
+  color: #c7c7cb;
+}
+
+.repo-list {
+  gap: 12px;
+}
+
+.repo-card {
+  gap: 16px;
+}
+
+.repo-details {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 16px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.repo-language {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+.repo-language-dot {
+  width: 9px;
+  height: 9px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+}
+
+.repo-status,
+.repo-error {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.repo-status {
+  color: var(--muted);
+}
+
+.repo-error {
+  color: #f08a8a;
+}
+
+.page-intro {
+  margin-bottom: 28px;
+}
+
+.page-intro p {
+  margin-top: 11px;
+}
+
+.entry-date {
+  color: var(--subtle);
+  font-size: 12px;
+}
+
+.search-field {
+  display: flex;
+  width: min(100%, 310px);
+  min-height: 40px;
+  align-items: center;
+  gap: 9px;
+  margin: 28px 0 22px;
+  padding: 0 11px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  color: var(--muted);
+}
+
+.search-field svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+}
+
+.search-field input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  color: var(--text);
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+}
+
+.search-field input::placeholder {
+  color: var(--subtle);
+}
+
+.search-field input:focus-visible {
+  outline: 0;
+}
+
+.blog-list {
+  gap: 12px;
+}
+
+.blog-post {
+  display: grid;
+  justify-items: start;
+  gap: 16px;
+}
+
+.blog-post h1 {
+  margin: 0;
+  color: #f0f0f1;
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.blog-post-content {
+  margin: 0;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.entry-date {
+  flex: 0 0 auto;
+}
+
+.empty-state {
+  margin: 8px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.not-found-page .page-kicker {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.not-found-page > p:not(.page-kicker) {
+  margin: 10px 0 17px;
+}
+
+@media (max-width: 560px) {
+  .site-shell {
+    padding: 0 22px;
+  }
+
+  .site-header {
+    min-height: 56px;
+    gap: 12px;
+  }
+
+  .site-brand {
+    font-size: 14px;
+  }
+
+  .site-nav {
+    gap: 7px;
+    font-size: 13px;
+  }
+
+  .page-content {
+    padding-top: 53px;
+  }
+
+  .intro p,
+  .page-intro p,
+  .not-found-page > p:not(.page-kicker) {
+    font-size: 15px;
+  }
+
+  .entry-card {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .entry-copy strong {
+    font-size: 15px;
+  }
+
+  .entry-copy small {
+    font-size: 13px;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
