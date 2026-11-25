@@ -227,20 +227,44 @@ a.entry-card:hover {
 }
 
 .repo-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
 }
 
 .repo-card {
-  gap: 16px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-items: stretch;
+  gap: 0;
+  min-height: 132px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.repo-card .entry-copy {
+  display: contents;
+}
+
+.repo-card .entry-copy strong {
+  grid-row: 1;
+  padding: 17px 16px 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.repo-card .entry-copy small {
+  grid-row: 2;
+  padding: 14px 16px 17px;
+  font-size: 14px;
 }
 
 .repo-details {
   display: flex;
-  flex: 0 0 auto;
   align-items: center;
-  gap: 16px;
+  justify-content: flex-end;
+  grid-row: 1;
+  padding: 0 16px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .repo-language {
@@ -369,6 +393,10 @@ a.entry-card:hover {
 }
 
 @media (max-width: 560px) {
+  .repo-list {
+    grid-template-columns: 1fr;
+  }
+
   .site-shell {
     padding: 0 22px;
   }
